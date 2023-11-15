@@ -78,7 +78,7 @@ void _puts(char *str)
  * Return: dest string
  */
 char *stringCpy(char *dest, char *src)
-B
+
 {
 	int m = 0;
 
