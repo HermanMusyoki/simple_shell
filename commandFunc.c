@@ -41,3 +41,39 @@ void locateCommand(info_t *info)
 		}
 	}
 }
+
+/**
+ * changeNum - function changes number into char string
+ * @num: represents number changed to char string
+ * @base: base which a number is changed
+ * @flags: argument paremeter flags
+ * Return: string
+ */
+char *changeNum(long int num, int base, int flags)
+{
+	static char *array;
+	static char buffer[50];
+	char sign = 0;
+	char *ptr;
+	unsigned long c = num;
+
+	if (!(flags & CONVERT_UNSIGNED) && num < 0)
+	{
+		c = -num;
+		sign = '-';
+
+	}
+	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+	ptr = &buffer[49];
+	*ptr = '\0';
+
+	do	{
+		*--ptr = array[c % base];
+		c /= base;
+	} while (c != 0);
+
+	if (sign)
+		*--ptr = sign;
+
+	return (ptr);
+}

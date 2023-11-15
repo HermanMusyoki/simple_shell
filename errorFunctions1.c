@@ -1,28 +1,6 @@
 #include "shell.h"
 
 /**
- * retrieveNode - a function that gets the index of a node in a linked list
- * @head: pointer to list head of the linked list
- * @node: pointer to the node to get the index
- *
- * Return: node index of the list
- */
-ssize_t retrieveNode(list_t *head, list_t *node)
-{
-	size_t m = 0;
-
-	while (head)
-	{
-		if (head == node)
-			return (m);
-		head = head->next;
-		m++;
-	}
-
-	return (-1);
-}
-
-/**
  * cyso_Erratoi - function converts a string to an integer
  * @s: a pointer to a char data type
  * Return: 0 if no numbers in string,otherwise-1 on error
@@ -87,41 +65,6 @@ int outputD(int input, int fd)
 	count++;
 
 	return (count);
-}
-
-/**
- * changeNum - function changes number into char string
- * @num: represents number changed to char string
- * @base: base which a number is changed
- * @flags: argument paremeter flags
- * Return: string
- */
-char *changeNum(long int num, int base, int flags)
-{
-	static char *array;
-	static char buffer[50];
-	char sign = 0;
-	char *ptr;
-	unsigned long c = num;
-
-	if (!(flags & CONVERT_UNSIGNED) && num < 0)
-	{
-		c = -num;
-		sign = '-';
-
-	}
-	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
-	ptr = &buffer[49];
-	*ptr = '\0';
-
-	do	{
-		*--ptr = array[c % base];
-		c /= base;
-	} while (c != 0);
-
-	if (sign)
-		*--ptr = sign;
-	return (ptr);
 }
 
 /**
