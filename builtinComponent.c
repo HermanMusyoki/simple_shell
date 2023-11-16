@@ -5,7 +5,7 @@
  * displayHistory - a function that displays the history list,the
  * output is one line
  * command starting with line numbers begging at 0.
- * @info:a pointer to struct of arguments
+ * @information: - pointer to struct of arguments
  *  Return: Always 0 (success)
  */
 int displayHistory(info_t *information)

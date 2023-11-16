@@ -28,7 +28,7 @@ int outputAlias(list_t *node)
 /**
  * removeAlias - a function that sets alias to string
  * @info: pointer to the struct
- * @str: a pointer to the string alias to set
+ * @string: a pointer to the string alias to set
  *
  * Return: Always 0 (success) 0r  1 (fail)
  */
@@ -88,7 +88,7 @@ int cyso_alias(info_t *info)
 /**
  * addAlias -a function that sets alias to given string
  * @info:  a pointer to the struct
- * @str: a pointer to the string alias to set
+ * @string: a pointer to the string alias to set
  *
  * Return: Always 0 (success) or  1 (fail)
  */

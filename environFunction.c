@@ -2,7 +2,7 @@
 
 /**
  * cyso_addEnv - function activates new environment variable
- * @info: pointer structure with arguments
+ * @inform: pointer structure with arguments
  *  Return: Always 0
  */
 
@@ -23,7 +23,7 @@ int cyso_addEnv(info_t *inform)
 /**
  * getEnv - function  access and retrieve environment variable values
  * @info: pointer to Structure with arguments
- * @name: represents the name of an environment variable to retrieve
+ * @id: represents the name of an environment variable to retrieve
  * Return: the value
  */
 
@@ -45,7 +45,7 @@ char *getEnv(info_t *info, const char *id)
 
 /**
  * cyso_env - function prints the current environment
- * @info: pointer to Structure with arguments
+ * @information: pointer to Structure with arguments
  * Return: Always 0
  */
 

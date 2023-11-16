@@ -52,7 +52,7 @@ int cyso_Cd(info_t *info)
 
 /**
  * cyso_Aid - fuction changes the current directory
- * @info: pointer to Structure with arguments
+ * @information: pointer to Structure with arguments
  * Return: Always 0
  */
 

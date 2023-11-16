@@ -44,7 +44,7 @@ void locateCommand(info_t *info)
 
 /**
  * changeNum - function changes number into char string
- * @num: represents number changed to char string
+ * @number: represents number changed to char string
  * @base: base which a number is changed
  * @flags: argument paremeter flags
  * Return: string

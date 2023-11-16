@@ -39,7 +39,7 @@ void readChain(info_t *info, char *buffer, size_t *p, size_t str, size_t len)
  * cyso_isChain - a function that checks if a character
  * in buffer is a chain delimeter
  * @info: pointer to the struct
- * @buf: pointer to thr character to test
+ * @buffer: pointer to thr character to test
  * @p: pointer to the current index in the buffer
  *
  * Return: 1 (success) or 0 (fail)
