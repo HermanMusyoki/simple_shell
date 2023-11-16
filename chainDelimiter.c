@@ -4,9 +4,9 @@
  * readChain - a function that parmits to continue chaining
  * according to last status
  * @info: pointer to the struct
- * @buf: pointer to the character in the buffer
+ * @buffer: pointer to the character in the buffer
  * @p: pointer to the current index
- * @st: the beggining of the buffer
+ * @str: the beggining of the buffer
  * @len: parameter for buffer length
  *
  * Return: Nothing
