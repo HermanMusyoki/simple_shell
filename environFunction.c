@@ -6,14 +6,14 @@
  *  Return: Always 0
  */
 
-int cyso_addEnv(info_t *info)
+int cyso_addEnv(info_t *inform)
 {
-	if (info->argc != 3)
+	if (inform->argc != 3)
 	{
 		cyso_puts("Incorrect number of arguements\n");
 		return (1);
 	}
-	if (addEnv(info, info->argv[1], info->argv[2]))
+	if (addEnv(inform, inform->argv[1], inform->argv[2]))
 
 		return (0);
 
@@ -27,14 +27,14 @@ int cyso_addEnv(info_t *info)
  * Return: the value
  */
 
-char *getEnv(info_t *info, const char *name)
+char *getEnv(info_t *info, const char *id)
 {
 	list_t *node = info->env;
 	char *v;
 
 	while (node)
 	{
-		v = beginWith(node->str, name);
+		v = beginWith(node->str, id);
 		if (v && *v)
 			return (v);
 		node = node->next;
@@ -49,9 +49,9 @@ char *getEnv(info_t *info, const char *name)
  * Return: Always 0
  */
 
-int cyso_env(info_t *info)
+int cyso_env(info_t *information)
 {
-	outputListstr(info->env);
+	outputListstr(information->env);
 
 	return (0);
 }

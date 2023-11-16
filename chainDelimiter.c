@@ -11,7 +11,7 @@
  *
  * Return: Nothing
  */
-void readChain(info_t *info, char *buf, size_t *p, size_t st, size_t len)
+void readChain(info_t *info, char *buffer, size_t *p, size_t str, size_t len)
 {
 	size_t m = *p;
 
@@ -19,7 +19,7 @@ void readChain(info_t *info, char *buf, size_t *p, size_t st, size_t len)
 	{
 		if (info->status)
 		{
-			buf[st] = 0;
+			buffer[str] = 0;
 			m = len;
 		}
 	}
@@ -27,7 +27,7 @@ void readChain(info_t *info, char *buf, size_t *p, size_t st, size_t len)
 	{
 		if (!info->status)
 		{
-			buf[st] = 0;
+			buffer[str] = 0;
 			m = len;
 		}
 	}
@@ -44,25 +44,25 @@ void readChain(info_t *info, char *buf, size_t *p, size_t st, size_t len)
  *
  * Return: 1 (success) or 0 (fail)
  */
-int cyso_isChain(info_t *info, char *buf, size_t *p)
+int cyso_isChain(info_t *info, char *buffer, size_t *p)
 {
 	size_t m = *p;
 
-	if (buf[m] == '|' && buf[m + 1] == '|')
+	if (buffer[m] == '|' && buffer[m + 1] == '|')
 	{
-		buf[m] = 0;
+		buffer[m] = 0;
 		m++;
 		info->cmd_buf_type = CMD_OR;
 	}
-	else if (buf[m] == '&' && buf[m + 1] == '&')
+	else if (buffer[m] == '&' && buffer[m + 1] == '&')
 	{
-		buf[m] = 0;
+		buffer[m] = 0;
 		m++;
 		info->cmd_buf_type = CMD_AND;
 	}
-	else if (buf[m] == ';')
+	else if (buffer[m] == ';')
 	{
-		buf[m] = 0;
+		buffer[m] = 0;
 		info->cmd_buf_type = CMD_CHAIN;
 	}
 	else

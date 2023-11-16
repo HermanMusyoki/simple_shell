@@ -56,11 +56,11 @@ int cyso_Cd(info_t *info)
  * Return: Always 0
  */
 
-int cyso_Aid(info_t *info)
+int cyso_Aid(info_t *information)
 {
 	char **arg_array;
 
-	arg_array = info->argv;
+	arg_array = information->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
 		_puts(*arg_array);

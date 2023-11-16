@@ -32,12 +32,12 @@ int outputAlias(list_t *node)
  *
  * Return: Always 0 (success) 0r  1 (fail)
  */
-int removeAlias(info_t *info, char *str)
+int removeAlias(info_t *info, char *string)
 {
 	char *ptr, chars;
 	int output;
 
-	ptr = stringChr(str, '=');
+	ptr = stringChr(string, '=');
 
 	if (!ptr)
 		return (1);
@@ -45,7 +45,7 @@ int removeAlias(info_t *info, char *str)
 	chars = *ptr;
 	*ptr = 0;
 	output = removeNodeatIndex(&(info->alias),
-		retrieveNode(info->alias, nodeBeginsChar(info->alias, str, -1)));
+		retrieveNode(info->alias, nodeBeginsChar(info->alias, string, -1)));
 	*ptr = chars;
 
 	return (output);
@@ -92,20 +92,20 @@ int cyso_alias(info_t *info)
  *
  * Return: Always 0 (success) or  1 (fail)
  */
-int addAlias(info_t *info, char *str)
+int addAlias(info_t *info, char *string)
 {
 	char *ptr;
 
-	ptr = stringChr(str, '=');
+	ptr = stringChr(string, '=');
 
 	if (!ptr)
 		return (1);
 
 	if (!*++ptr)
-		return (removeAlias(info, str));
+		return (removeAlias(info, string));
 
-	removeAlias(info, str);
+	removeAlias(info, string);
 
-	return (putNodeEnd(&(info->alias), str, 0) == NULL);
+	return (putNodeEnd(&(info->alias), string, 0) == NULL);
 }
 

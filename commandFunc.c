@@ -49,17 +49,17 @@ void locateCommand(info_t *info)
  * @flags: argument paremeter flags
  * Return: string
  */
-char *changeNum(long int num, int base, int flags)
+char *changeNum(long int number, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
 	char sign = 0;
 	char *ptr;
-	unsigned long c = num;
+	unsigned long c = number;
 
-	if (!(flags & CONVERT_UNSIGNED) && num < 0)
+	if (!(flags & CONVERT_UNSIGNED) && number < 0)
 	{
-		c = -num;
+		c = -number;
 		sign = '-';
 
 	}

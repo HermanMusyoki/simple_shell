@@ -8,9 +8,9 @@
  * @info:a pointer to struct of arguments
  *  Return: Always 0 (success)
  */
-int displayHistory(info_t *info)
+int displayHistory(info_t *information)
 {
-	outputList(info->history);
+	outputList(information->history);
 	return (0);
 }
 
